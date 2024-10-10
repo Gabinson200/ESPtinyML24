@@ -8,6 +8,23 @@
 This is the simplest buildable example. The example is used by command `idf.py create-project`
 that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
 
+This github consists of 4 main parts
+```
+├── micro_speech
+├── model_making
+├── tamagotchi
+├── combined
+```
+The tamagotchi esp-idf folder that encapuslates all non-ML functionality of our microcontroller for hardware components such as OLED, joystick, Wifi, etc. and their software such as the animations and game functionality. 
+
+The model_making folder which will have the python files used to build, train, quantize, and convert the speech recognition model using the Tensorflow Lite Micro pipeline that will be used by the micro_speech application.
+
+The micro_speech folder which also defines an esp idf project similar to tamagotchi but is purely responsible for the implementation of the wake word detection functionality.
+
+Finally the combined file will have the combined esp idf code for the combination of the tamagotchi functionality and the wake word detection. 
+
+Documentation for the different files will be housed inside their respective folders.
+
 
 
 ## How to use example
